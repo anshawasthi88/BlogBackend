@@ -4,14 +4,16 @@ const router = express.Router();
 
 //import controller
 
-const {dummyLink} = require("../controllers/LikeController");
+const {createLike, unlikePost} = require("../controllers/LikeController");
 const {createComment} = require("../controllers/CommentController");
-const { createPost, getAllPosts } = require("../controllers/PostController");
+const { createPost, getAllPosts } = require("../controllers/PostController")
 
-router.get("/dummyroute",dummyLink);
+// router.get("/dummyroute",dummyLink);
 router.post("/comments/create",createComment)
 router.post("/posts/create",createPost);
 router.get("/posts",getAllPosts);
+router.post("/likes/create",createLike);
+router.post("/likes/unlike",unlikePost);
 
 //mapping create
 
